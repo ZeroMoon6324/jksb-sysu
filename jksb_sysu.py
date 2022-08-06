@@ -87,8 +87,9 @@ def jksb(driver):
     logging.info("点击下一步")
     driver.find_element_by_xpath('//*[@id="form_command_bar"]/li[1]').click()
 
-    wait.until(expected_conditions.element_to_be_clickable((By.XPATH, "//*[@id='form_command_bar']/li[2]")) ) # 出现终止按钮
+    wait.until(expected_conditions.element_to_be_clickable((By.CLASS_NAME, "command_button")) ) # 出现终止按钮
     logging.info("提交健康申报")
+    time.sleep(1)
     driver.find_element(By.CLASS_NAME, "command_button").click()
 
     result=""
